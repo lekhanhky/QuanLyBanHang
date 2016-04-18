@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DonViTinh" DefaultDetailViewImage="BO_Product_Group" DefaultListViewImage="BO_Product_Group" ImageName="BO_Product_Group" IsCloneable="True" DefaultLookupEditorMode="AllItemsWithSearch" IsVisibleInReports="True" Caption="Đơn Vị Tính" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.HangHoa" DefaultDetailViewImage="BO_Product" DefaultListViewImage="BO_Product" ImageName="BO_Product" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" IsVisibleInReports="True" Caption="Hàng Hóa" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Ke" Caption="Kệ" DefaultDetailViewImage="Action_Navigation" DefaultListViewImage="Action_Navigation" ImageName="Action_Navigation" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewNewItemRowPosition="Bottom" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Kho" IsVisibleInReports="True" DefaultDetailViewImage="BO_Address" DefaultListViewImage="BO_Address" ImageName="BO_Address" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewNewItemRowPosition="Bottom" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.LoaiHang" DefaultDetailViewImage="BO_List" DefaultListViewImage="BO_List" ImageName="BO_List" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewAllowEdit="True" DefaultListViewNewItemRowPosition="Bottom" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" IsVisibleInReports="True" Caption="Loại Hàng" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.NhanHieu" DefaultDetailViewImage="BO_Sale_v92" DefaultListViewImage="BO_Sale_v92" ImageName="BO_Sale_v92" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" Caption="Nhãn Hiệu" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Nhap" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewNewItemRowPosition="Bottom" IsCloneable="True" IsVisibleInReports="True" Caption="Nhập Hàng" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Nhap_HangHoa" DefaultDetailViewImage="ModelEditor_Views" DefaultListViewImage="ModelEditor_Views" ImageName="ModelEditor_Views" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" IsCloneable="True" DefaultLookupEditorMode="AllItemsWithSearch" IsVisibleInReports="True" Caption="Nhập Hàng Chi Tiết" />
+  </BOModel>
+  <ImageSources>
+    <AssemblyResourceImageSource AssemblyName="DevExpress.ExpressApp.Images.v15.2" Folder="Images" />
+  </ImageSources>
+  <NavigationItems>
+    <Items>
+      <Item Id="@ffbc9e26-e807-4d2b-b928-ae85a9737309" ImageName="Action_WindowList" Caption="DANH MỤC" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@ae614109-4efa-41ff-8936-62819406ef75" ImageName="BO_Sale_v92" ViewId="DonViTinh_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options Skin="Visual Studio 2013 Blue" UIType="TabbedMDI" FormStyle="Ribbon">
+    <RibbonOptions RibbonControlStyle="Office2013" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="15.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="15.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="DoiTuong_ListView" ImageName="" />
+  </Views>
+</Application>
