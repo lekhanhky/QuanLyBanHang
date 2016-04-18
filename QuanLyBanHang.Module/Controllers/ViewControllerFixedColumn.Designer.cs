@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBanHang.Module.Controllers
 {
-    partial class PasteClipboard
+    partial class ViewControllerFixedColumn
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             // 
-            // PasteClipboard
+            // ViewControllerFixedColumn
             // 
             this.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
             this.TypeOfView = typeof(DevExpress.ExpressApp.ListView);
-            this.ViewControlsCreated += new System.EventHandler(this.PasteClipboard_ViewControlsCreated);
 
         }
 

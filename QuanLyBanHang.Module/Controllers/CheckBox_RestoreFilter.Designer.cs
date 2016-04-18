@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBanHang.Module.Controllers
 {
-    partial class PasteClipboard
+    partial class CheckBox_RestoreFilter
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             // 
-            // PasteClipboard
+            // CheckBox_RestoreFilter
             // 
             this.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
             this.TypeOfView = typeof(DevExpress.ExpressApp.ListView);
-            this.ViewControlsCreated += new System.EventHandler(this.PasteClipboard_ViewControlsCreated);
+            this.ViewControlsCreated += new System.EventHandler(this.CheckBox_RestoreFilter_ViewControlsCreated);
 
         }
 

@@ -192,17 +192,30 @@
     <Compile Include="BusinessObjects\ORMDataModel1Code\Xuat_HangHoa.Designer.cs">
       <DependentUpon>Xuat_HangHoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckMarkSelection.cs" />
     <Compile Include="Controllers\CauHinhChungListView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\CauHinhChungListView.Designer.cs">
       <DependentUpon>CauHinhChungListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CheckBox_RestoreFilter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\CheckBox_RestoreFilter.Designer.cs">
+      <DependentUpon>CheckBox_RestoreFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\EnterToTab.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\EnterToTab.Designer.cs">
       <DependentUpon>EnterToTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\LookupPropertyEditorController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\LookupPropertyEditorController.Designer.cs">
+      <DependentUpon>LookupPropertyEditorController.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\PasteClipboard.cs">
       <SubType>Component</SubType>
@@ -215,6 +228,12 @@
     </Compile>
     <Compile Include="Controllers\ShowExpandLayout.Designer.cs">
       <DependentUpon>ShowExpandLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ViewControllerFixedColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ViewControllerFixedColumn.Designer.cs">
+      <DependentUpon>ViewControllerFixedColumn.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
@@ -229,11 +248,20 @@
     <EmbeddedResource Include="Controllers\CauHinhChungListView.resx">
       <DependentUpon>CauHinhChungListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\CheckBox_RestoreFilter.resx">
+      <DependentUpon>CheckBox_RestoreFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\LookupPropertyEditorController.resx">
+      <DependentUpon>LookupPropertyEditorController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\PasteClipboard.resx">
       <DependentUpon>PasteClipboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ShowExpandLayout.resx">
       <DependentUpon>ShowExpandLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\ViewControllerFixedColumn.resx">
+      <DependentUpon>ViewControllerFixedColumn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
@@ -246,14 +274,12 @@
     <None Include="BusinessObjects\ORMDataModel1.xpo" />
     <None Include="BusinessObjects\ORMDataModel1.xpo.diagram">
       <DependentUpon>ORMDataModel1.xpo</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="DatabaseUpdate\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BusinessObjects\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Controllers\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FunctionalTests\ReadMe.txt" />

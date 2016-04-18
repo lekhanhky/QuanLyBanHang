@@ -24,6 +24,10 @@ namespace QuanLyBanHang.Win {
             Application.SetCompatibleTextRenderingDefault(false);
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
             QuanLyBanHangWindowsFormsApplication winApplication = new QuanLyBanHangWindowsFormsApplication();
+
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("vi");
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("vi-VN");
+
             // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
             IsGrantedAdapter.Enable(XPOSecurityAdapterHelper.GetXpoCachedRequestSecurityAdapters());

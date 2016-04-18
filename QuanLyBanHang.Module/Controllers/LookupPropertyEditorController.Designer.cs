@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBanHang.Module.Controllers
 {
-    partial class PasteClipboard
+    partial class LookupPropertyEditorController
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             // 
-            // PasteClipboard
+            // LookupPropertyEditorController
             // 
-            this.TargetViewType = DevExpress.ExpressApp.ViewType.ListView;
-            this.TypeOfView = typeof(DevExpress.ExpressApp.ListView);
-            this.ViewControlsCreated += new System.EventHandler(this.PasteClipboard_ViewControlsCreated);
+          
 
         }
 

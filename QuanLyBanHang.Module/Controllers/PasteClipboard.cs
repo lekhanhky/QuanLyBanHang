@@ -34,20 +34,7 @@ namespace QuanLyBanHang.Module.Controllers
             base.OnDeactivated();
         }
 
-        private void PasteClipboard_ViewControlsCreated(object sender, EventArgs e)
-        {
-            GridListEditor listEditor = ((DevExpress.ExpressApp.ListView)View).Editor as GridListEditor;
-            GridView gridView = listEditor.GridView;
-            if (listEditor != null && !View.Id.Contains("Lookup"))
-            // if (listEditor != null)
-            {
-                Console.WriteLine("View đã duyệt " + View.Id);
-
-                gridView.GridControl.ProcessGridKey += new KeyEventHandler(GridControl_ProcessGridKey);
-            }
-        }
-
-        private void AddRow(string data, int rowHandle, GridView gridView)
+               private void AddRow(string data, int rowHandle, GridView gridView)
         {
             if (data == string.Empty) return;
             //string[] rowData = data.Split('\t');
@@ -192,6 +179,19 @@ namespace QuanLyBanHang.Module.Controllers
             //    }
 
             //}
+        }
+
+        private void PasteClipboard_ViewControlsCreated(object sender, EventArgs e)
+        {
+            GridListEditor listEditor = ((DevExpress.ExpressApp.ListView)View).Editor as GridListEditor;
+            GridView gridView = listEditor.GridView;
+            if (listEditor != null && !View.Id.Contains("Lookup"))
+            // if (listEditor != null)
+            {
+                Console.WriteLine("View đã duyệt " + View.Id);
+
+                gridView.GridControl.ProcessGridKey += new KeyEventHandler(GridControl_ProcessGridKey);
+            }
         }
     }
 }

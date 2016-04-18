@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application>
+<Application PreferredLanguage="vi">
   <BOModel>
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DoiTuong" Caption="Đối Tượng" />
     <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DonViTinh" DefaultDetailViewImage="BO_Product_Group" DefaultListViewImage="BO_Product_Group" ImageName="BO_Product_Group" IsCloneable="True" DefaultLookupEditorMode="AllItemsWithSearch" IsVisibleInReports="True" Caption="Đơn Vị Tính" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" />
     <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.HangHoa" DefaultDetailViewImage="BO_Product" DefaultListViewImage="BO_Product" ImageName="BO_Product" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" IsVisibleInReports="True" Caption="Hàng Hóa" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" />
     <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Ke" Caption="Kệ" DefaultDetailViewImage="Action_Navigation" DefaultListViewImage="Action_Navigation" ImageName="Action_Navigation" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewNewItemRowPosition="Bottom" />
@@ -13,10 +14,15 @@
   <ImageSources>
     <AssemblyResourceImageSource AssemblyName="DevExpress.ExpressApp.Images.v15.2" Folder="Images" />
   </ImageSources>
-  <NavigationItems>
+  <NavigationItems NavigationStyle="TreeList" GenerateRelatedViewVariantsGroup="True">
     <Items>
       <Item Id="@ffbc9e26-e807-4d2b-b928-ae85a9737309" ImageName="Action_WindowList" Caption="DANH MỤC" IsNewNode="True">
         <Items IsNewNode="True">
+          <Item Id="@52a05124-2019-4aaf-9a18-fd49fa5cc8e7" ImageName="BO_Customer" ViewId="DoiTuong_ListView" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@9a2ce7a3-5ef6-4bc6-b685-c816eb1df92d" ViewId="DoiTuong_ListView_NhaCungCap" Caption="Nhà Cung Cấp" ImageName="BO_Person" IsNewNode="True" />
+            </Items>
+          </Item>
           <Item Id="@ae614109-4efa-41ff-8936-62819406ef75" ImageName="BO_Sale_v92" ViewId="DonViTinh_ListView" IsNewNode="True" />
         </Items>
       </Item>
@@ -31,6 +37,28 @@
     <SchemaModule Name="SystemWindowsFormsModule" Version="15.2.7.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
-    <ListView Id="DoiTuong_ListView" ImageName="" />
+    <ListView Id="DoiTuong_ListView" ImageName="" MasterDetailMode="ListViewAndDetailView" MasterDetailView="PersistentBase_DetailView">
+      <SplitLayout SplitterPosition="250" />
+      <Variants Current="@591d031c-7cf9-4ac6-85e8-e7019f40232b">
+        <Variant Id="@1f82639a-f744-4e13-8550-830b35a592eb" ViewID="DoiTuong_ListView_NhaCungCap" Caption="Nhà Cung Cấp" IsNewNode="True" />
+        <Variant Id="@591d031c-7cf9-4ac6-85e8-e7019f40232b" ViewID="DoiTuong_ListView" Caption="Đối Tượng All" IsNewNode="True" />
+      </Variants>
+    </ListView>
+    <ListView Id="DoiTuong_ListView_NhaCungCap" ClassName="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DoiTuong" MasterDetailMode="ListViewAndDetailView" Criteria="[LaNhaCungCap] = True" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Id" PropertyName="Id" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Ma" PropertyName="Ma" Width="70" Index="0" PredefinedValues="111" IsNewNode="True" />
+        <ColumnInfo Id="Ten" PropertyName="Ten" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="DiaChi" PropertyName="DiaChi" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="DienThoaiBan" PropertyName="DienThoaiBan" Width="70" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="DienThoaiDiDong" PropertyName="DienThoaiDiDong" Width="70" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="Email" PropertyName="Email" Width="70" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="Website" PropertyName="Website" Width="70" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="MaSoThue" PropertyName="MaSoThue" Width="70" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="LaNhaCungCap" PropertyName="LaNhaCungCap" Width="50" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="LaKhachHang" PropertyName="LaKhachHang" Width="50" Index="9" IsNewNode="True" />
+      </Columns>
+      <SplitLayout SplitterPosition="250" IsNewNode="True" />
+    </ListView>
   </Views>
 </Application>
