@@ -18,6 +18,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
     {
         int fId;
         [Key(true)]
+        [MemberDesignTimeVisibility(false)]
         public int Id
         {
             get { return fId; }
@@ -26,18 +27,21 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         string fMa;
         [Indexed(Name = @"IX_Nhap", Unique = true)]
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Mã")]
         public string Ma
         {
             get { return fMa; }
             set { SetPropertyValue<string>("Ma", ref fMa, value); }
         }
         DateTime fNgayTao;
+        [DevExpress.Xpo.DisplayName(@"Ngày tạo")]
         public DateTime NgayTao
         {
             get { return fNgayTao; }
             set { SetPropertyValue<DateTime>("NgayTao", ref fNgayTao, value); }
         }
         DateTime fNgayHoaDon;
+        [DevExpress.Xpo.DisplayName(@"Ngày hóa đơn")]
         public DateTime NgayHoaDon
         {
             get { return fNgayHoaDon; }
@@ -45,25 +49,29 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fSoHoaDon;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Số hóa đơn")]
         public string SoHoaDon
         {
             get { return fSoHoaDon; }
             set { SetPropertyValue<string>("SoHoaDon", ref fSoHoaDon, value); }
         }
-        DoiTuong fDoiTuong_Id;
-        [Association(@"NhapReferencesDoiTuong")]
-        public DoiTuong DoiTuong_Id
-        {
-            get { return fDoiTuong_Id; }
-            set { SetPropertyValue<DoiTuong>("DoiTuong_Id", ref fDoiTuong_Id, value); }
-        }
         string fGhiChu;
         [Size(200)]
+        [DevExpress.Xpo.DisplayName(@"Ghi chú")]
         public string GhiChu
         {
             get { return fGhiChu; }
             set { SetPropertyValue<string>("GhiChu", ref fGhiChu, value); }
         }
+        DoiTuong fDoiTuong_Id;
+        [Association(@"NhapReferencesDoiTuong")]
+        [DevExpress.Xpo.DisplayName(@"Đối tượng")]
+        public DoiTuong DoiTuong_Id
+        {
+            get { return fDoiTuong_Id; }
+            set { SetPropertyValue<DoiTuong>("DoiTuong_Id", ref fDoiTuong_Id, value); }
+        }
+        [DevExpress.Xpo.DisplayName(@"Nhập chi tiết")]
         [Association(@"Nhap_HangHoaReferencesNhap")]
         public XPCollection<Nhap_HangHoa> Nhap_HangHoas { get { return GetCollection<Nhap_HangHoa>("Nhap_HangHoas"); } }
     }

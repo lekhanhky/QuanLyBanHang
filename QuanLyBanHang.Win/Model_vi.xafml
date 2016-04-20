@@ -1,2 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application />
+<Application ProtectedContentText="******">
+  <ActionDesign>
+    <Actions>
+      <Action Id="ResetViewSettings" ShortCaption="Trở về mặc định" Caption="Trở về mặc định" ConfirmationMessage="Trở về mặc định cho lưới của  &quot;{0}&quot; đang chọn. Bạn có tiếp tục ?" ToolTip="Trở về mặc định cho lưới của  &quot;{0}&quot; đang chọn. Bạn có tiếp tục ?" />
+      <Action Id="Save" Caption="Lưu" />
+      <Action Id="SaveAndClose" Caption="Lưu và Đóng" ToolTip="Lưu và Đóng" ShortCaption="Lưu và Đóng" />
+      <Action Id="SaveAndNew" ToolTip="Lưu và Tạo mới" ShortCaption="Lưu và Tạo mới" Caption="Lưu và Tạo mới" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.NhapDauKy" Caption="Nhập Đầu Kỳ" />
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="ChartModule">
+      <LocalizationItem Name="ClearSettings" Value="Xóa thiết lập" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="PivotGridModule">
+      <LocalizationItem Name="ClearSettings" Value="Xóa thiết lập" />
+    </LocalizationGroup>
+  </Localization>
+  <NavigationItems>
+    <Items>
+      <Item Id="@031c182a-b7a7-4709-bf58-ddee35d14139" Caption="NHẬP HÀNG">
+        <Items>
+          <Item Id="@79f3c61e-bd34-476d-89d9-ca7b94067eb6" Caption="Nhập Đầu Kỳ" />
+        </Items>
+      </Item>
+      <Item Id="@c8350759-ee18-4d45-9072-3cadcb73496e" Caption="BÁN HÀNG" />
+    </Items>
+  </NavigationItems>
+  <Views>
+    <DetailView Id="DoiTuong_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="DoiTuong" Caption="Đối tượng" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

@@ -18,6 +18,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
     {
         int fId;
         [Key(true)]
+        [MemberDesignTimeVisibility(false)]
         public int Id
         {
             get { return fId; }
@@ -26,6 +27,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         string fMa;
         [Indexed(Name = @"IX_DoiTuong", Unique = true)]
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Mã")]
         public string Ma
         {
             get { return fMa; }
@@ -33,6 +35,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fTen;
         [Indexed(Name = @"IX_DoiTuong_1", Unique = true)]
+        [DevExpress.Xpo.DisplayName(@"Tên")]
         public string Ten
         {
             get { return fTen; }
@@ -40,6 +43,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fDiaChi;
         [Size(200)]
+        [DevExpress.Xpo.DisplayName(@"Địa chỉ")]
         public string DiaChi
         {
             get { return fDiaChi; }
@@ -47,6 +51,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fDienThoaiBan;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Điện thoại bàn")]
         public string DienThoaiBan
         {
             get { return fDienThoaiBan; }
@@ -54,6 +59,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fDienThoaiDiDong;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Điện thoại di động")]
         public string DienThoaiDiDong
         {
             get { return fDienThoaiDiDong; }
@@ -75,27 +81,34 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fMaSoThue;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Mã số thuế")]
         public string MaSoThue
         {
             get { return fMaSoThue; }
             set { SetPropertyValue<string>("MaSoThue", ref fMaSoThue, value); }
         }
         bool fLaNhaCungCap;
+        [DevExpress.Xpo.DisplayName(@"Là Nhà cung cấp")]
         public bool LaNhaCungCap
         {
             get { return fLaNhaCungCap; }
             set { SetPropertyValue<bool>("LaNhaCungCap", ref fLaNhaCungCap, value); }
         }
         bool fLaKhachHang;
+        [DevExpress.Xpo.DisplayName(@"Là Khách hàng")]
         public bool LaKhachHang
         {
             get { return fLaKhachHang; }
             set { SetPropertyValue<bool>("LaKhachHang", ref fLaKhachHang, value); }
         }
+        [DevExpress.Xpo.DisplayName(@"Nhập hàng hóa")]
         [Association(@"NhapReferencesDoiTuong")]
         public XPCollection<Nhap> Nhaps { get { return GetCollection<Nhap>("Nhaps"); } }
+        [DevExpress.Xpo.DisplayName(@"Nhập đầu kỳ")]
         [Association(@"NhapDauKyReferencesDoiTuong")]
         public XPCollection<NhapDauKy> NhapDauKies { get { return GetCollection<NhapDauKy>("NhapDauKies"); } }
+        [Association(@"XuatReferencesDoiTuong")]
+        public XPCollection<Xuat> Xuats { get { return GetCollection<Xuat>("Xuats"); } }
     }
 
 }

@@ -18,6 +18,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
     {
         int fId;
         [Key(true)]
+        [MemberDesignTimeVisibility(false)]
         public int Id
         {
             get { return fId; }
@@ -25,6 +26,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         Xuat fXuat_Id;
         [Association(@"Xuat_HangHoaReferencesXuat")]
+        [MemberDesignTimeVisibility(false)]
         public Xuat Xuat_Id
         {
             get { return fXuat_Id; }
@@ -32,12 +34,14 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         HangHoa fHangHoa_Id;
         [Association(@"Xuat_HangHoaReferencesHangHoa")]
+        [DevExpress.Xpo.DisplayName(@"Hàng hóa")]
         public HangHoa HangHoa_Id
         {
             get { return fHangHoa_Id; }
             set { SetPropertyValue<HangHoa>("HangHoa_Id", ref fHangHoa_Id, value); }
         }
         decimal fSoLuong;
+        [DevExpress.Xpo.DisplayName(@"Số lượng")]
         public decimal SoLuong
         {
             get { return fSoLuong; }
@@ -45,12 +49,14 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         DonViTinh fDonViTinh_Id;
         [Association(@"Xuat_HangHoaReferencesDonViTinh")]
+        [DevExpress.Xpo.DisplayName(@"Đơn vị tính")]
         public DonViTinh DonViTinh_Id
         {
             get { return fDonViTinh_Id; }
             set { SetPropertyValue<DonViTinh>("DonViTinh_Id", ref fDonViTinh_Id, value); }
         }
         decimal fGiaXuat;
+        [DevExpress.Xpo.DisplayName(@"Giá xuất")]
         public decimal GiaXuat
         {
             get { return fGiaXuat; }
@@ -58,6 +64,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fGhiChu;
         [Size(200)]
+        [DevExpress.Xpo.DisplayName(@"Ghi chú")]
         public string GhiChu
         {
             get { return fGhiChu; }

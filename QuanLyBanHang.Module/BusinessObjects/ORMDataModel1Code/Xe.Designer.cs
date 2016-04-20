@@ -18,20 +18,25 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
     {
         int fId;
         [Key(true)]
+        [MemberDesignTimeVisibility(false)]
         public int Id
         {
             get { return fId; }
             set { SetPropertyValue<int>("Id", ref fId, value); }
         }
         string fMa;
+        [Indexed(Name = @"IX_Xe", Unique = true)]
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Mã")]
         public string Ma
         {
             get { return fMa; }
             set { SetPropertyValue<string>("Ma", ref fMa, value); }
         }
         string fTen;
+        [Indexed(Name = @"IX_Xe_1", Unique = true)]
         [Size(200)]
+        [DevExpress.Xpo.DisplayName(@"Tên")]
         public string Ten
         {
             get { return fTen; }
@@ -39,6 +44,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fGhiChu;
         [Size(200)]
+        [DevExpress.Xpo.DisplayName(@"Ghi chú")]
         public string GhiChu
         {
             get { return fGhiChu; }

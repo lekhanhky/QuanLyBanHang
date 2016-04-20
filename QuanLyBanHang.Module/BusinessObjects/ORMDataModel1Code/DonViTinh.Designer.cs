@@ -18,6 +18,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
     {
         int fId;
         [Key(true)]
+        [MemberDesignTimeVisibility(false)]
         public int Id
         {
             get { return fId; }
@@ -26,6 +27,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         string fMa;
         [Indexed(Name = @"IX_DonViTinh", Unique = true)]
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Mã")]
         public string Ma
         {
             get { return fMa; }
@@ -34,6 +36,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         string fTen;
         [Indexed(Name = @"IX_DonViTinh_1", Unique = true)]
         [Size(200)]
+        [DevExpress.Xpo.DisplayName(@"Tên")]
         public string Ten
         {
             get { return fTen; }
@@ -41,6 +44,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fGhiChu;
         [Size(200)]
+        [DevExpress.Xpo.DisplayName(@"Ghi chú")]
         public string GhiChu
         {
             get { return fGhiChu; }
@@ -52,6 +56,8 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         public XPCollection<NhapDauKy_HangHoa> NhapDauKy_HangHoas { get { return GetCollection<NhapDauKy_HangHoa>("NhapDauKy_HangHoas"); } }
         [Association(@"Xuat_HangHoaReferencesDonViTinh")]
         public XPCollection<Xuat_HangHoa> Xuat_HangHoas { get { return GetCollection<Xuat_HangHoa>("Xuat_HangHoas"); } }
+        [Association(@"HangHoaReferencesDonViTinh")]
+        public XPCollection<HangHoa> HangHoas { get { return GetCollection<HangHoa>("HangHoas"); } }
     }
 
 }

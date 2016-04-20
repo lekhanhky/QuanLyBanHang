@@ -18,6 +18,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
     {
         int fId;
         [Key(true)]
+        [MemberDesignTimeVisibility(false)]
         public int Id
         {
             get { return fId; }
@@ -25,18 +26,21 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fMa;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Mã")]
         public string Ma
         {
             get { return fMa; }
             set { SetPropertyValue<string>("Ma", ref fMa, value); }
         }
         DateTime fNgayTao;
+        [DevExpress.Xpo.DisplayName(@"Ngày tạo")]
         public DateTime NgayTao
         {
             get { return fNgayTao; }
             set { SetPropertyValue<DateTime>("NgayTao", ref fNgayTao, value); }
         }
         DateTime fNgayHoaDon;
+        [DevExpress.Xpo.DisplayName(@"Ngày hóa đơn")]
         public DateTime NgayHoaDon
         {
             get { return fNgayHoaDon; }
@@ -44,6 +48,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fSoHoaDon;
         [Size(50)]
+        [DevExpress.Xpo.DisplayName(@"Số hóa đơn")]
         public string SoHoaDon
         {
             get { return fSoHoaDon; }
@@ -51,6 +56,7 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         DoiTuong fDoiTuong_Id;
         [Association(@"NhapDauKyReferencesDoiTuong")]
+        [DevExpress.Xpo.DisplayName(@"Đối tượng")]
         public DoiTuong DoiTuong_Id
         {
             get { return fDoiTuong_Id; }
@@ -58,11 +64,14 @@ namespace QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang
         }
         string fGhiChu;
         [Size(200)]
+        [DevExpress.Xpo.DisplayName(@"Ghi chú")]
         public string GhiChu
         {
             get { return fGhiChu; }
             set { SetPropertyValue<string>("GhiChu", ref fGhiChu, value); }
         }
+        [Association(@"NhapDauKy_HangHoaReferencesNhapDauKy")]
+        public XPCollection<NhapDauKy_HangHoa> NhapDauKy_HangHoas { get { return GetCollection<NhapDauKy_HangHoa>("NhapDauKy_HangHoas"); } }
     }
 
 }

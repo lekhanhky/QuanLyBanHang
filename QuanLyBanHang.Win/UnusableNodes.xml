@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="DoiTuong_ListView_Copy">
+      <Variants Id="Variants" Current="@591d031c-7cf9-4ac6-85e8-e7019f40232b" />
+    </ListView>
+  </Views>
+</Application>

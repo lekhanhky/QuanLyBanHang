@@ -1,31 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application PreferredLanguage="vi">
+<Application PreferredLanguage="vi" ProtectedContentText="Protected">
   <BOModel>
-    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DoiTuong" Caption="Đối Tượng" />
-    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DonViTinh" DefaultDetailViewImage="BO_Product_Group" DefaultListViewImage="BO_Product_Group" ImageName="BO_Product_Group" IsCloneable="True" DefaultLookupEditorMode="AllItemsWithSearch" IsVisibleInReports="True" Caption="Đơn Vị Tính" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" />
-    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.HangHoa" DefaultDetailViewImage="BO_Product" DefaultListViewImage="BO_Product" ImageName="BO_Product" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" IsVisibleInReports="True" Caption="Hàng Hóa" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" />
+    <Class Name="DevExpress.Xpo.XPBaseObject" IsVisibleInReports="True" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DoiTuong" Caption="Đối Tượng" DefaultDetailViewImage="BO_Customer" DefaultListViewImage="BO_Customer" DefaultLookupEditorMode="AllItemsWithSearch" DefaultListViewAllowEdit="True" DefaultListViewNewItemRowPosition="Bottom" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DonViTinh" DefaultDetailViewImage="BO_Product_Group" DefaultListViewImage="BO_Product_Group" ImageName="BO_Product_Group" IsCloneable="True" DefaultLookupEditorMode="AllItemsWithSearch" IsVisibleInReports="True" Caption="Đơn Vị Tính" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewNewItemRowPosition="Bottom" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.HangHoa" DefaultDetailViewImage="BO_Product" DefaultListViewImage="BO_Product" ImageName="BO_Product" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" IsVisibleInReports="True" Caption="Hàng Hóa" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewNewItemRowPosition="Bottom">
+      <OwnMembers>
+        <Member Name="DonViTinh_Id" LookupProperty="Ten" />
+        <Member Name="LoaiHang_Id" LookupProperty="Ten" />
+      </OwnMembers>
+    </Class>
     <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Ke" Caption="Kệ" DefaultDetailViewImage="Action_Navigation" DefaultListViewImage="Action_Navigation" ImageName="Action_Navigation" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewNewItemRowPosition="Bottom" />
     <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Kho" IsVisibleInReports="True" DefaultDetailViewImage="BO_Address" DefaultListViewImage="BO_Address" ImageName="BO_Address" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewNewItemRowPosition="Bottom" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" />
     <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.LoaiHang" DefaultDetailViewImage="BO_List" DefaultListViewImage="BO_List" ImageName="BO_List" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewAllowEdit="True" DefaultListViewNewItemRowPosition="Bottom" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" IsVisibleInReports="True" Caption="Loại Hàng" />
     <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.NhanHieu" DefaultDetailViewImage="BO_Sale_v92" DefaultListViewImage="BO_Sale_v92" ImageName="BO_Sale_v92" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultLookupEditorMode="AllItemsWithSearch" IsCloneable="True" Caption="Nhãn Hiệu" />
-    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Nhap" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewNewItemRowPosition="Bottom" IsCloneable="True" IsVisibleInReports="True" Caption="Nhập Hàng" />
-    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Nhap_HangHoa" DefaultDetailViewImage="ModelEditor_Views" DefaultListViewImage="ModelEditor_Views" ImageName="ModelEditor_Views" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" IsCloneable="True" DefaultLookupEditorMode="AllItemsWithSearch" IsVisibleInReports="True" Caption="Nhập Hàng Chi Tiết" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Nhap" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewNewItemRowPosition="Bottom" IsCloneable="True" IsVisibleInReports="True" Caption="Nhập Hàng" DefaultDetailViewImage="BO_Appearance" DefaultListViewImage="BO_Appearance" ImageName="BO_Appearance">
+      <OwnMembers>
+        <Member Name="DoiTuong_Id" LookupProperty="Ten" />
+      </OwnMembers>
+    </Class>
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Nhap_HangHoa" DefaultDetailViewImage="ModelEditor_Views" DefaultListViewImage="ModelEditor_Views" ImageName="ModelEditor_Views" DefaultListViewAllowEdit="True" DefaultListViewMasterDetailMode="ListViewOnly" IsCloneable="True" DefaultLookupEditorMode="AllItemsWithSearch" IsVisibleInReports="True" Caption="Nhập Hàng Chi Tiết" DefaultListViewNewItemRowPosition="Bottom">
+      <OwnMembers>
+        <Member Name="DonViTinh_Id" LookupProperty="Ten" />
+        <Member Name="HangHoa_Id" LookupProperty="Ten" />
+        <Member Name="Ke_Id" LookupProperty="Ten" />
+      </OwnMembers>
+    </Class>
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.NhapDauKy" Caption="Nhập đầu kỳ" DefaultDetailViewImage="Action_Totals_Row" DefaultListViewImage="Action_Totals_Row" ImageName="Action_Totals_Row" DefaultListViewMasterDetailMode="ListViewAndDetailView">
+      <OwnMembers>
+        <Member Name="DoiTuong_Id" LookupProperty="Ten" />
+      </OwnMembers>
+    </Class>
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.NhapDauKy_HangHoa" Caption="Nhập Đầu Kỳ Chi Tiết" DefaultListViewNewItemRowPosition="Bottom">
+      <OwnMembers>
+        <Member Name="DonViTinh_Id" LookupProperty="Ten" />
+        <Member Name="HangHoa_Id" LookupProperty="Ten" />
+        <Member Name="Ke_Id" LookupProperty="Ten" />
+      </OwnMembers>
+    </Class>
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Xe" DefaultListViewMasterDetailMode="ListViewAndDetailView" DefaultListViewAllowEdit="True" DefaultListViewNewItemRowPosition="Bottom" IsCloneable="True" DefaultLookupEditorMode="AllItemsWithSearch" />
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Xuat" Caption="Xuất Hàng" DefaultDetailViewImage="BO_Sale" DefaultListViewImage="BO_Sale" ImageName="BO_Sale" DefaultListViewMasterDetailMode="ListViewAndDetailView">
+      <OwnMembers>
+        <Member Name="DoiTuong_Id" LookupProperty="Ten" />
+      </OwnMembers>
+    </Class>
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Xuat_HangHoa" Caption="Xuất Hàng Chi Tiết" DefaultListViewNewItemRowPosition="Bottom">
+      <OwnMembers>
+        <Member Name="DonViTinh_Id" LookupProperty="Ten" />
+        <Member Name="HangHoa_Id" LookupProperty="Ten" />
+      </OwnMembers>
+    </Class>
   </BOModel>
   <ImageSources>
     <AssemblyResourceImageSource AssemblyName="DevExpress.ExpressApp.Images.v15.2" Folder="Images" />
   </ImageSources>
-  <NavigationItems NavigationStyle="TreeList" GenerateRelatedViewVariantsGroup="True">
+  <NavigationItems NavigationStyle="TreeList" GenerateRelatedViewVariantsGroup="True" DefaultChildItemsDisplayStyle="LargeIcons">
     <Items>
-      <Item Id="@ffbc9e26-e807-4d2b-b928-ae85a9737309" ImageName="Action_WindowList" Caption="DANH MỤC" IsNewNode="True">
+      <Item Id="@ffbc9e26-e807-4d2b-b928-ae85a9737309" ImageName="Action_WindowList" Caption="DANH MỤC" ChildItemsDisplayStyle="LargeIcons" Index="0" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="@52a05124-2019-4aaf-9a18-fd49fa5cc8e7" ImageName="BO_Customer" ViewId="DoiTuong_ListView" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="@9a2ce7a3-5ef6-4bc6-b685-c816eb1df92d" ViewId="DoiTuong_ListView_NhaCungCap" Caption="Nhà Cung Cấp" ImageName="BO_Person" IsNewNode="True" />
-            </Items>
-          </Item>
-          <Item Id="@ae614109-4efa-41ff-8936-62819406ef75" ImageName="BO_Sale_v92" ViewId="DonViTinh_ListView" IsNewNode="True" />
+          <Item Id="@0a054a12-3630-448f-b7f5-cd6244afd6f8" ImageName="BO_Product_Group" ViewId="HangHoa_ListView_Copy" IsNewNode="True" />
+          <Item Id="@0c200bdc-b9a8-4dbd-b470-eab1a63774f2" ImageName="Action_AboutInfo" ViewId="NhanHieu_ListView" IsNewNode="True" />
+          <Item Id="@52a05124-2019-4aaf-9a18-fd49fa5cc8e7" ImageName="BO_Customer" ViewId="DoiTuong_ListView_Copy" IsNewNode="True" />
+          <Item Id="@6fa47919-8e61-442e-8f34-9ba4fb140394" ImageName="BO_List" ViewId="LoaiHang_ListView_Copy" IsNewNode="True" />
+          <Item Id="@ae614109-4efa-41ff-8936-62819406ef75" ImageName="BO_Sale_v92" ViewId="DonViTinh_ListView_Copy" IsNewNode="True" />
+          <Item Id="@b32ad67a-b481-439d-a72c-5c6791c183ee" ImageName="Action_OrganizeDashboard" ViewId="Ke_ListView_Copy" IsNewNode="True" />
+          <Item Id="@cc512460-4c13-40bd-b3c1-35558aa9b93b" ImageName="BO_Address" ViewId="Kho_ListView_Copy" IsNewNode="True" />
+          <Item Id="@faeca5ad-e96c-45dc-be44-d0ee32c11f72" ViewId="Xe_ListView" ImageName="BO_Vendor" IsNewNode="True" />
         </Items>
       </Item>
+      <Item Id="@031c182a-b7a7-4709-bf58-ddee35d14139" ImageName="Action_Debug_Step" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@5fa06dd7-f45a-4b74-93cb-2213ea4be175" ViewId="Nhap_ListView" ImageName="BO_Appearance" IsNewNode="True" />
+          <Item Id="@79f3c61e-bd34-476d-89d9-ca7b94067eb6" ImageName="Action_Totals_Row" ViewId="NhapDauKy_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="@c8350759-ee18-4d45-9072-3cadcb73496e" ImageName="BO_Sale" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@bc5dff52-4766-43b3-b09f-45ac3d03c570" ImageName="BO_Sale" ViewId="Xuat_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Default" Caption="PHÂN QUYỀN" />
+      <Item Id="Reports" Caption="BÁO CÁO" ChildItemsDisplayStyle="List" />
     </Items>
   </NavigationItems>
   <Options Skin="Visual Studio 2013 Blue" UIType="TabbedMDI" FormStyle="Ribbon">
@@ -37,12 +92,53 @@
     <SchemaModule Name="SystemWindowsFormsModule" Version="15.2.7.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
-    <ListView Id="DoiTuong_ListView" ImageName="" MasterDetailMode="ListViewAndDetailView" MasterDetailView="PersistentBase_DetailView">
+    <DetailView Id="DoiTuong_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="DoiTuong" RelativeSize="100">
+              <LayoutGroup Id="DoiTuong_col1" RelativeSize="50">
+                <LayoutItem Id="Ma" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="Ten" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="DiaChi" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="DienThoaiBan" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="DienThoaiDiDong" RelativeSize="85.31073446327683" />
+              </LayoutGroup>
+              <LayoutGroup Id="DoiTuong_col2" RelativeSize="50">
+                <LayoutItem Id="Email" RelativeSize="4.5197740112994351" />
+                <LayoutItem Id="Website" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="MaSoThue" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="LaNhaCungCap" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="LaKhachHang" RelativeSize="85.31073446327683" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DoiTuong_ListView" ImageName="" MasterDetailMode="ListViewAndDetailView" MasterDetailView="DoiTuong_DetailView">
       <SplitLayout SplitterPosition="250" />
       <Variants Current="@591d031c-7cf9-4ac6-85e8-e7019f40232b">
         <Variant Id="@1f82639a-f744-4e13-8550-830b35a592eb" ViewID="DoiTuong_ListView_NhaCungCap" Caption="Nhà Cung Cấp" IsNewNode="True" />
         <Variant Id="@591d031c-7cf9-4ac6-85e8-e7019f40232b" ViewID="DoiTuong_ListView" Caption="Đối Tượng All" IsNewNode="True" />
       </Variants>
+    </ListView>
+    <ListView Id="DoiTuong_ListView_Copy" ClassName="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DoiTuong" ImageName="" MasterDetailMode="ListViewAndDetailView" MasterDetailView="DoiTuong_DetailView" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Ma" PropertyName="Ma" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Ten" PropertyName="Ten" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="DiaChi" PropertyName="DiaChi" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="DienThoaiBan" PropertyName="DienThoaiBan" Width="70" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="DienThoaiDiDong" PropertyName="DienThoaiDiDong" Width="70" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="Email" PropertyName="Email" Width="70" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="Website" PropertyName="Website" Width="70" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="MaSoThue" PropertyName="MaSoThue" Width="70" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="LaNhaCungCap" PropertyName="LaNhaCungCap" Width="50" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="LaKhachHang" PropertyName="LaKhachHang" Width="50" Index="9" IsNewNode="True" />
+      </Columns>
+      <SplitLayout SplitterPosition="250" IsNewNode="True" />
+      <Variants Current="@591d031c-7cf9-4ac6-85e8-e7019f40232b" IsNewNode="True" />
     </ListView>
     <ListView Id="DoiTuong_ListView_NhaCungCap" ClassName="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DoiTuong" MasterDetailMode="ListViewAndDetailView" Criteria="[LaNhaCungCap] = True" IsNewNode="True">
       <Columns IsNewNode="True">
@@ -59,6 +155,154 @@
         <ColumnInfo Id="LaKhachHang" PropertyName="LaKhachHang" Width="50" Index="9" IsNewNode="True" />
       </Columns>
       <SplitLayout SplitterPosition="250" IsNewNode="True" />
+    </ListView>
+    <DetailView Id="DonViTinh_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="DonViTinh" RelativeSize="100">
+              <LayoutItem Id="Ma" RelativeSize="4.2666666666666666" />
+              <LayoutItem Id="Ten" RelativeSize="3.2" />
+              <LayoutItem Id="GhiChu" RelativeSize="92.533333333333331" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DonViTinh_HangHoas_ListView">
+      <Columns>
+        <ColumnInfo Id="DonViTinh_Id" LookupProperty="Ten" />
+        <ColumnInfo Id="LoaiHang_Id" LookupProperty="Ten" />
+      </Columns>
+    </ListView>
+    <ListView Id="DonViTinh_ListView_Copy" ClassName="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DonViTinh" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Ma" PropertyName="Ma" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Ten" PropertyName="Ten" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="GhiChu" PropertyName="GhiChu" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+      <SplitLayout SplitterPosition="200" IsNewNode="True" />
+    </ListView>
+    <ListView Id="DonViTinh_LookupListView" MasterDetailMode="ListViewOnly" />
+    <DetailView Id="HangHoa_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="HangHoa" RelativeSize="100">
+              <LayoutGroup Id="HangHoa_col1" RelativeSize="50">
+                <LayoutItem Id="Ma" RelativeSize="7.9207920792079207" />
+                <LayoutItem Id="Ma1" RelativeSize="5.9405940594059405" />
+                <LayoutItem Id="Ma2" RelativeSize="5.9405940594059405" />
+                <LayoutItem Id="MaVach" RelativeSize="5.9405940594059405" />
+                <LayoutItem Id="Ten" RelativeSize="74.257425742574256" />
+              </LayoutGroup>
+              <LayoutGroup Id="HangHoa_col2" RelativeSize="50">
+                <LayoutItem Id="DonViTinh_Id" RelativeSize="7.9207920792079207" />
+                <LayoutItem Id="Gia" RelativeSize="5.9405940594059405" />
+                <LayoutItem Id="GhiChu" RelativeSize="5.9405940594059405" />
+                <LayoutItem Id="LoaiHang_Id" RelativeSize="5.9405940594059405" Index="3" />
+                <LayoutItem Id="SuDung" RelativeSize="74.257425742574256" Index="4" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="HangHoa_ListView">
+      <Columns>
+        <ColumnInfo Id="DonViTinh_Id" LookupProperty="Ten" />
+        <ColumnInfo Id="LoaiHang_Id" LookupProperty="Ten" />
+      </Columns>
+    </ListView>
+    <ListView Id="HangHoa_ListView_Copy" ClassName="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.HangHoa" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Ma" PropertyName="Ma" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Ma1" PropertyName="Ma1" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Ma2" PropertyName="Ma2" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="MaVach" PropertyName="MaVach" Width="70" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="Ten" PropertyName="Ten" Width="70" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="DonViTinh_Id" PropertyName="DonViTinh_Id" Width="70" Index="5" LookupProperty="Ten" IsNewNode="True" />
+        <ColumnInfo Id="Gia" PropertyName="Gia" Width="50" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="GhiChu" PropertyName="GhiChu" Width="70" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="SuDung" PropertyName="SuDung" Width="50" Index="8" IsNewNode="True" />
+        <ColumnInfo Id="LoaiHang_Id" PropertyName="LoaiHang_Id" Width="70" Index="9" LookupProperty="Ten" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="HangHoa_LookupListView" MasterDetailMode="ListViewOnly">
+      <Columns>
+        <ColumnInfo Id="DonViTinh_Id" LookupProperty="Ten" />
+        <ColumnInfo Id="LoaiHang_Id" LookupProperty="Ten" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Ke_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Ke" RelativeSize="100">
+              <LayoutItem Id="Ma" RelativeSize="4.2666666666666666" />
+              <LayoutItem Id="Ten" RelativeSize="3.2" />
+              <LayoutItem Id="GhiChu" RelativeSize="92.533333333333331" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Ke_ListView_Copy" ClassName="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Ke" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Ma" PropertyName="Ma" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Ten" PropertyName="Ten" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="GhiChu" PropertyName="GhiChu" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="Kho_ListView_Copy" ClassName="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Kho" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Ma" PropertyName="Ma" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Ten" PropertyName="Ten" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="GhiChu" PropertyName="GhiChu" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="DienThoai" PropertyName="DienThoai" Width="70" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="DiaChi" PropertyName="DiaChi" Width="70" Index="4" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="LoaiHang_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="LoaiHang" RelativeSize="100">
+              <LayoutItem Id="Ma" RelativeSize="4.2666666666666666" />
+              <LayoutItem Id="Ten" RelativeSize="3.2" />
+              <LayoutItem Id="GhiChu" RelativeSize="92.533333333333331" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="HangHoas_Group" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="LoaiHang_HangHoas_ListView">
+      <Columns>
+        <ColumnInfo Id="LoaiHang_Id" LookupProperty="Ten" />
+        <ColumnInfo Id="DonViTinh_Id" LookupProperty="Ten" />
+      </Columns>
+    </ListView>
+    <ListView Id="LoaiHang_ListView" MasterDetailMode="ListViewAndDetailView" />
+    <ListView Id="LoaiHang_ListView_Copy" ClassName="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.LoaiHang" MasterDetailMode="ListViewAndDetailView" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Ma" PropertyName="Ma" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Ten" PropertyName="Ten" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="GhiChu" PropertyName="GhiChu" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="LoaiHang_LookupListView" MasterDetailMode="ListViewOnly" />
+    <ListView Id="Nhap_ListView">
+      <SplitLayout SplitterPosition="250" />
+    </ListView>
+    <ListView Id="NhapDauKy_ListView">
+      <SplitLayout SplitterPosition="250" />
+    </ListView>
+    <ListView Id="Xuat_ListView">
+      <SplitLayout SplitterPosition="250" />
     </ListView>
   </Views>
 </Application>

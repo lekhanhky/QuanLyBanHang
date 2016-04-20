@@ -1,8 +1,10 @@
-﻿<?xml version="1.0" ?>
-<Application Title="QuanLyBanHang" Logo="ExpressAppLogo">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="QuanLyBanHang" Logo="ExpressAppLogo" ProtectedContentText="******">
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
-  <Views>
-  </Views>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="15.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.7.0" IsNewNode="True" />
+  </SchemaModules>
 </Application>

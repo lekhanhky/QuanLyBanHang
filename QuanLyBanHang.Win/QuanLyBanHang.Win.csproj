@@ -312,6 +312,10 @@
     <Content Include="Images\Summary_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="vi\DevExpress.Charts.Designer.v15.2.resources.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

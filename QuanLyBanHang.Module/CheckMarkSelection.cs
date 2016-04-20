@@ -155,7 +155,7 @@ namespace DevExpress.XtraGrid.Selection
                 column.VisibleIndex = 0;
                 //column.FieldName = "CheckMarkSelection";
                 column.FieldName = "Check";
-                column.Caption = "Mark";
+                column.Caption = "Check";
                 column.OptionsColumn.ShowCaption = false;
                 column.OptionsColumn.AllowEdit = false;
                 column.OptionsColumn.AllowSize = false;

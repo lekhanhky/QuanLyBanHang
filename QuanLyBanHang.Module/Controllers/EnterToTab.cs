@@ -51,6 +51,13 @@ namespace QuanLyBanHang.Module.Controllers
         }
         void propertyEditor_ControlCreated(object sender, EventArgs e)
         {
+            DXPropertyEditor propertyEditor = (DXPropertyEditor)sender;
+            DateTimeEdit dateTimeEdit = propertyEditor.Control as DateTimeEdit;
+
+            if (dateTimeEdit != null)
+            {
+                dateTimeEdit.CanShowPopupOnEnter = false;
+            }
             ((DXPropertyEditor)sender).Control.EnterMoveNextControl = true;
         }
     }
