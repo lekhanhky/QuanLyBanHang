@@ -31,7 +31,7 @@
         <Member Name="DoiTuong_Id" LookupProperty="Ten" />
       </OwnMembers>
     </Class>
-    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.NhapDauKy_HangHoa" Caption="Nhập Đầu Kỳ Chi Tiết" DefaultListViewNewItemRowPosition="Bottom">
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.NhapDauKy_HangHoa" Caption="Nhập Đầu Kỳ Chi Tiết" DefaultListViewNewItemRowPosition="Bottom" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="DonViTinh_Id" LookupProperty="Ten" />
         <Member Name="HangHoa_Id" LookupProperty="Ten" />
@@ -44,7 +44,7 @@
         <Member Name="DoiTuong_Id" LookupProperty="Ten" />
       </OwnMembers>
     </Class>
-    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Xuat_HangHoa" Caption="Xuất Hàng Chi Tiết" DefaultListViewNewItemRowPosition="Bottom">
+    <Class Name="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Xuat_HangHoa" Caption="Xuất Hàng Chi Tiết" DefaultListViewNewItemRowPosition="Bottom" DefaultListViewAllowEdit="True">
       <OwnMembers>
         <Member Name="DonViTinh_Id" LookupProperty="Ten" />
         <Member Name="HangHoa_Id" LookupProperty="Ten" />
@@ -118,6 +118,9 @@
       </Layout>
     </DetailView>
     <ListView Id="DoiTuong_ListView" ImageName="" MasterDetailMode="ListViewAndDetailView" MasterDetailView="DoiTuong_DetailView">
+      <Columns>
+        <ColumnInfo Id="Ma" AllowEdit="False" />
+      </Columns>
       <SplitLayout SplitterPosition="250" />
       <Variants Current="@591d031c-7cf9-4ac6-85e8-e7019f40232b">
         <Variant Id="@1f82639a-f744-4e13-8550-830b35a592eb" ViewID="DoiTuong_ListView_NhaCungCap" Caption="Nhà Cung Cấp" IsNewNode="True" />
@@ -126,7 +129,7 @@
     </ListView>
     <ListView Id="DoiTuong_ListView_Copy" ClassName="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.DoiTuong" ImageName="" MasterDetailMode="ListViewAndDetailView" MasterDetailView="DoiTuong_DetailView" IsNewNode="True">
       <Columns IsNewNode="True">
-        <ColumnInfo Id="Ma" PropertyName="Ma" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Ma" PropertyName="Ma" Width="70" Index="0" AllowEdit="False" IsNewNode="True" />
         <ColumnInfo Id="Ten" PropertyName="Ten" Width="70" Index="1" IsNewNode="True" />
         <ColumnInfo Id="DiaChi" PropertyName="DiaChi" Width="70" Index="2" IsNewNode="True" />
         <ColumnInfo Id="DienThoaiBan" PropertyName="DienThoaiBan" Width="70" Index="3" IsNewNode="True" />
@@ -257,6 +260,7 @@
         <ColumnInfo Id="GhiChu" PropertyName="GhiChu" Width="70" Index="2" IsNewNode="True" />
       </Columns>
     </ListView>
+    <ListView Id="Ke_LookupListView" MasterDetailMode="ListViewOnly" />
     <ListView Id="Kho_ListView_Copy" ClassName="QuanLyBanHang.Module.BusinessObjects.QuanLyBanHang.Kho" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="Ma" PropertyName="Ma" Width="70" Index="0" IsNewNode="True" />
@@ -295,12 +299,78 @@
       </Columns>
     </ListView>
     <ListView Id="LoaiHang_LookupListView" MasterDetailMode="ListViewOnly" />
+    <DetailView Id="Nhap_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.066666666666666">
+            <LayoutGroup Id="Nhap" RelativeSize="100">
+              <LayoutGroup Id="Nhap_col1" RelativeSize="50">
+                <LayoutItem Id="Ma" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="NgayTao" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="NgayHoaDon" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+              <LayoutGroup Id="Nhap_col2" RelativeSize="50">
+                <LayoutItem Id="SoHoaDon" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="GhiChu" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="DoiTuong_Id" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutItem Id="Nhap_HangHoas" ViewItem="Nhap_HangHoas" Index="1" RelativeSize="82.933333333333337" IsNewNode="True" />
+          <LayoutGroup Id="Nhap_HangHoas_Group" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="Nhap_ListView">
       <SplitLayout SplitterPosition="250" />
     </ListView>
+    <DetailView Id="NhapDauKy_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.066666666666666">
+            <LayoutGroup Id="NhapDauKy" RelativeSize="100">
+              <LayoutGroup Id="NhapDauKy_col1" RelativeSize="50">
+                <LayoutItem Id="Ma" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="NgayTao" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="NgayHoaDon" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+              <LayoutGroup Id="NhapDauKy_col2" RelativeSize="50">
+                <LayoutItem Id="SoHoaDon" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="DoiTuong_Id" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="GhiChu" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutItem Id="NhapDauKy_HangHoas" ViewItem="NhapDauKy_HangHoas" Index="1" RelativeSize="82.933333333333337" IsNewNode="True" />
+          <LayoutGroup Id="NhapDauKy_HangHoas_Group" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="NhapDauKy_ListView">
       <SplitLayout SplitterPosition="250" />
     </ListView>
+    <DetailView Id="Xuat_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.066666666666666">
+            <LayoutGroup Id="Xuat" RelativeSize="100">
+              <LayoutGroup Id="Xuat_col1" RelativeSize="50">
+                <LayoutItem Id="Ma" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="NgayTao" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="NgayHoaDon" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+              <LayoutGroup Id="Xuat_col2" RelativeSize="50">
+                <LayoutItem Id="SoHoaDon" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="DoiTuong_Id" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="GhiChu" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutItem Id="Xuat_HangHoas" ViewItem="Xuat_HangHoas" Index="1" RelativeSize="82.933333333333337" IsNewNode="True" />
+          <LayoutGroup Id="Xuat_HangHoas_Group" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="Xuat_ListView">
       <SplitLayout SplitterPosition="250" />
     </ListView>

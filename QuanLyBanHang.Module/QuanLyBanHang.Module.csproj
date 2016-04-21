@@ -217,6 +217,18 @@
     <Compile Include="Controllers\LookupPropertyEditorController.Designer.cs">
       <DependentUpon>LookupPropertyEditorController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\MyController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\MyController.Designer.cs">
+      <DependentUpon>MyController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MyGridListEditorController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\MyGridListEditorController.Designer.cs">
+      <DependentUpon>MyGridListEditorController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\PasteClipboard.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -228,6 +240,12 @@
     </Compile>
     <Compile Include="Controllers\ShowExpandLayout.Designer.cs">
       <DependentUpon>ShowExpandLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SkipReadOnlyPropertiesController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\SkipReadOnlyPropertiesController.Designer.cs">
+      <DependentUpon>SkipReadOnlyPropertiesController.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ViewControllerFixedColumn.cs">
       <SubType>Component</SubType>
@@ -254,11 +272,17 @@
     <EmbeddedResource Include="Controllers\LookupPropertyEditorController.resx">
       <DependentUpon>LookupPropertyEditorController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\MyGridListEditorController.resx">
+      <DependentUpon>MyGridListEditorController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controllers\PasteClipboard.resx">
       <DependentUpon>PasteClipboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ShowExpandLayout.resx">
       <DependentUpon>ShowExpandLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\SkipReadOnlyPropertiesController.resx">
+      <DependentUpon>SkipReadOnlyPropertiesController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ViewControllerFixedColumn.resx">
       <DependentUpon>ViewControllerFixedColumn.cs</DependentUpon>

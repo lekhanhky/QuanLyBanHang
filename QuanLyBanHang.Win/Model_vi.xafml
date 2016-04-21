@@ -29,6 +29,11 @@
       <Item Id="@c8350759-ee18-4d45-9072-3cadcb73496e" Caption="BÁN HÀNG" />
     </Items>
   </NavigationItems>
+  <ViewItems>
+    <PropertyEditor Name="PropertyEditors">
+      <RegisteredPropertyEditor PropertyType="System.Decimal" DefaultDisplayFormat="{0:n0}" DefaultEditMask="n0" />
+    </PropertyEditor>
+  </ViewItems>
   <Views>
     <DetailView Id="DoiTuong_DetailView">
       <Layout>

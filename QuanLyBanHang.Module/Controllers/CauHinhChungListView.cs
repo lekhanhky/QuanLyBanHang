@@ -137,7 +137,7 @@ namespace QuanLyBanhang.Module.Controllers
 
             gridView.OptionsView.ShowAutoFilterRow = true;
             //gridView.GridControl.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.True;
-
+            gridView.OptionsBehavior.EditorShowMode = EditorShowMode.MouseDownFocused;
             //gridView.OptionsBehavior.EditorShowMode = EditorShowMode.MouseUp;
             gridView.SelectionChanged += listEditor_SelectionChanged;
 
